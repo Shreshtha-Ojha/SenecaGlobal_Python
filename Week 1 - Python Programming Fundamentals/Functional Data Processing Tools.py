@@ -39,6 +39,9 @@ English Wikipedia is hosted alongside other language editions by the Wikimedia
  varieties of English while aiming to stay consistent within articles. 
  Its internal newspaper is The Signpost.'''
 
+match = re.search(pattern, text)
+print(match)           
+
 matches = re.finditer(pattern , text)
 for match in matches:
   print(match)
@@ -51,6 +54,8 @@ for match in matches:
 <re.Match object; span=(213, 220), match='English'>
 <re.Match object; span=(417, 424), match='Vnglish'>
 <re.Match object; span=(479, 486), match='English'>'''
+
+
 
 
 
