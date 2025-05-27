@@ -143,7 +143,18 @@ for i in gen:
 
 #iterators require the knowledge of class. Will come back to this after completing the other topics until OO concepts.
 
+"""Important Question
+Iterators and Generators
+Question:
+Implement a generator function called chunk_reader(file_path: str, chunk_size: int) that lazily reads a text file line-by-line and yields chunks of chunk_size lines at a time. Also, implement a custom iterator class ReverseList that iterates over a list in reverse order.
 
+Requirements:
+
+Use a generator to avoid loading the entire file into memory.
+
+The iterator class should raise StopIteration correctly.
+
+Include a usage example for both."""
 
 
 
