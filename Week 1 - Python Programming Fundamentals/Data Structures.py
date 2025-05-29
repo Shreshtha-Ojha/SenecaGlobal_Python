@@ -91,6 +91,34 @@ class Solution(object):
 
 
 #String Manipulation
+'''Concatenating two strings'''
+a = "Hi"
+b = "Shreshtha"
+print(a+' '+b)        #Output Hi Shreshtha
+
+'''Accessing Characters in a String'''
+word = "chocolate"
+out1 = word[3]
+out2= word[5]
+print(out1)        #output h
+print(out2)        #output l
+
+''' Replacing Part of a String'''
+sen = "I cannot code in Python"
+new_sen = sen.replace("cannot", "can")
+print(new_sen)                            #output I can code in python
+
+'''Finding the length of a string'''
+word = "Chocolate"
+n = len(word)
+print(n)                    #output 9
+
+'''Converting Numbers to Strings'''
+num = 100
+print("I am", num, "years old")
+
+
+
 '''Given two strings s and t, determine if they are isomorphic.
 
 Two strings s and t are isomorphic if the characters in s can be replaced to get t.
