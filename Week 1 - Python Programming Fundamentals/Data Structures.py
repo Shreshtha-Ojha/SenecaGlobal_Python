@@ -177,3 +177,40 @@ class Solution(object):
         return to_add + s
 
            
+# Formatting
+
+object = 'Chocolate'
+object2 = "milk"
+print(f"I like {object} and {object2}")        #output I like Chocolate and milk
+
+print("My name is {name} and I am {age} years old.".format(name="Shreshtha", age=100))  #output My name is Shreshtha and I am 100 years old.
+
+pi = 3.14159265
+print(f"the most commonly used value of pi is {pi: .2f}") # output: the most commonly used value of pi is 3.14
+
+number = 8943769237847
+print(f"The number with appropriate commas is : {number:,}")        #output: The number with appropriate commas is : 8,943,769,237,847
+
+# In-built Methods
+x = 100                                         
+print("Type of x:", type(x))                #output : Type of x: <class 'int'>      
+print("Length of 'hello':", len("hello"))   #output: Length of 'hello':5
+print("ID of x:", id(x))                    #output: ID of x: 10754024
+
+print("int('25'):", int("25"))               #output: int('25'): 25
+print("float('3.14'):", float("3.14"))       #output: float('3.14'): 3.14
+print("str(100):", str(100))                 #output: str(100): 100
+print("bool(0):", bool(0))                   #output: bool(0): False
+print("bool(1):", bool(1))                   #output: bool(1): True
+print("list('abc'):", list("abc"))           #output: list('abc'): ['a', 'b', 'c']
+print("tuple([1, 2, 3]):", tuple([1, 2, 3])) #Output: tuple([1, 2, 3]): (1, 2, 3)
+print("set([1, 2, 2, 3]):", set([1, 2, 2, 3]))                    #output: set([1, 2, 2, 3]): {1, 2, 3}
+print("dict([('a', 1), ('b', 2)]):", dict([('a', 1), ('b', 2)]))  #output: dict([('a', 1), ('b', 2)]): {'a': 1, 'b': 2}
+
+
+print("abs(-5):", abs(-5))                    #output: abs(-5): 5
+print("round(3.456, 2):", round(3.456, 2))    #output: round(3.456 , ): 3.46
+print("pow(2, 3):", pow(2, 3))                #output: pow(2,3): 8
+print("sum([1, 2, 3]):", sum([1, 2, 3]))      #output: sum([1,2,3]): 6
+print("min(5, 2, 7):", min(5, 2, 7))          #output: min(5,2,7): 2  
+print("max(5, 2, 7):", max(5, 2, 7))          #output: max(5,2,7): 7
