@@ -186,10 +186,10 @@ print(f"I like {object} and {object2}")        #output I like Chocolate and milk
 print("My name is {name} and I am {age} years old.".format(name="Shreshtha", age=100))  #output My name is Shreshtha and I am 100 years old.
 
 pi = 3.14159265
-print(f"the most commonly used value of pi is {pi: .2f}") # output: the most commonly used value of pi is 3.14
+print(f"the most commonly used value of pi is {pi: .2f}")      # output: the most commonly used value of pi is 3.14
 
 number = 8943769237847
-print(f"The number with appropriate commas is : {number:,}")        #output: The number with appropriate commas is : 8,943,769,237,847
+print(f"The number with appropriate commas is : {number:,}")   #output: The number with appropriate commas is : 8,943,769,237,847
 
 # In-built Methods
 x = 100                                         
@@ -214,3 +214,49 @@ print("pow(2, 3):", pow(2, 3))                #output: pow(2,3): 8
 print("sum([1, 2, 3]):", sum([1, 2, 3]))      #output: sum([1,2,3]): 6
 print("min(5, 2, 7):", min(5, 2, 7))          #output: min(5,2,7): 2  
 print("max(5, 2, 7):", max(5, 2, 7))          #output: max(5,2,7): 7
+
+
+l = ['a', 'b', 'c']
+print("enumerate(l):", list(enumerate(l)))        #output: enumerate(l): [(0, 'a'), (1, 'b'), (2, 'c')]
+nums1 = [1, 2, 3]
+nums2 = [4, 5, 6]
+print("zip(nums1, nums2):", list(zip(nums1, nums2)))        #output: zip(nums1, nums2): [(1, 4), (2, 5), (3, 6)]
+print("sorted([3, 1, 2]):", sorted([3, 1, 2]))              #output: sorted([3, 1, 2]): [1, 2, 3]
+print("reversed([1, 2, 3]):", list(reversed([1, 2, 3])))    #output: reversed([1,2,3]): [3,2,1]
+print("range(3):", list(range(3)))                          #output: range(3): [0,1,2]
+print("all([1, 2, 3]):", all([1, 2, 3]))                    #output: all([1,2,3]): True
+print("any([0, False, 5]):", any([0, False, 5]))            #output: any([0, False, 5]): True
+
+expression = "3 + 5 * 2"
+print("eval(expression):", eval(expression))            #output: eval(expression): 13
+code = "for i in range(2): print('Executed:', i)"
+exec(code)                                              #Output:Executed: 0  \n  Executed: 1
+compiled_code = compile("2 + 3", "<string>", "eval")
+print("compile + eval:", eval(compiled_code))            #output: compile + eval: 5
+
+
+#Searching and Sorting using python
+#Linear Search
+def linear_search(arr, target):
+    for i, value in enumerate(arr):
+        if value == target:
+            return i
+    return -1
+
+#Binary Search
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+#Sorting
+arr = [5, 2, 9, 1]
+sorted_arr = sorted(arr)  # Returns a new list
+arr.sort()                # Sorts the original list
