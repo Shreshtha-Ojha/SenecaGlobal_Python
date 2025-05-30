@@ -1,4 +1,4 @@
-#Arrays
+#Lists
 '''Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
 Note that you must do this in-place without making a copy of the array.'''
@@ -88,7 +88,20 @@ class Solution(object):
                     left += 1
                     right -= 1  
         return res
+#Tuple
+'''Reverse a Tuple'''
+inp_t = eval(input("Enter numbers: "))            #input: 4,5,6,7,8
+rev = inp_t[::-1]
+print(rev)                                        #output: (8,7,6,5,4)
 
+'''Find Tuples with All Elements Divisible by a Given Number'''
+def tdk(t,k):
+  return [tup for tup in t if all(elem%k==0 for elem in tup)]
+
+t= eval(input("Enter tuple pairs: "))            # Input: Enter tuple pairs: [(10,30),(45 , 43), (34,75)]
+k=int(input("Enter a number: "))                 # Input: k=2
+result = tdk(t,k)
+print(result)                                     #Output: [(10, 30)]
 
 #String Manipulation
 '''Concatenating two strings'''
