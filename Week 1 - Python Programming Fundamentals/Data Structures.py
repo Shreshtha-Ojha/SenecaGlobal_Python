@@ -295,3 +295,152 @@ def binary_search(arr, target):
 arr = [5, 2, 9, 1]
 sorted_arr = sorted(arr)  # Returns a new list
 arr.sort()                # Sorts the original list
+
+
+#bubble sort
+def bbsort(arr):
+  n=len(arr)
+  for i in range(n):
+    swapped = False
+    for j in range(0,n-i-1):
+      if arr[j]>arr[j+1]:
+        swapped = True
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+    if not swapped:
+      break
+  return arr
+
+arr = eval(input("Enter array: "))
+bbsort(arr)
+
+
+#QuickSort
+def qksort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        left = []
+        middle = []
+        right = []
+
+        for x in arr:
+            if x < pivot:
+                left.append(x)
+            elif x == pivot:
+                middle.append(x)
+            else:
+                right.append(x)
+
+        return qksort(left) + middle + qksort(right)
+arr = eval(input("Enter array: "))
+qksort(arr)
+
+
+#Selection Sort
+def ssort(arr):
+    n = len(arr)
+    for i in range(n):
+        mini = i
+        for j in range(i+1, n):
+            if arr[j] < arr[mini]:
+                mini = j
+        arr[i], arr[mini] = arr[mini], arr[i]
+    return arr
+arr = eval(input("Enter array: "))
+ssort(arr)
+
+
+#heap sort (max heap)
+def heapify(arr,n,i):
+  l = i
+  left = 2*i +1
+  right = 2*1+2
+  if left<n and arr[left]>arr[l]:
+    l = left
+  if right<n and arr[right]>arr[l]:
+    l = right
+  if l!=i:
+    arr[i], arr[l]=arr[l], arr[i]
+    heapify(arr, n, l)
+
+def heapsort(arr):
+  n = len(arr)
+  for i in range(n//2-1 , -1,-1):
+    heapify(arr,n,i)
+  for i in range(n-1,0,-1):
+    arr[i],arr[0] = arr[0] , arr[i]
+    heapify(arr,n,0)
+  return arr  
+
+arr = eval(input("Enter a list: "))
+heapsort(arr)   
+
+#Merge Sort
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left_half = merge_sort(arr[:mid])
+    right_half = merge_sort(arr[mid:])
+
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    merged = []
+    left_idx = right_idx = 0
+    while left_idx < len(left) and right_idx < len(right):
+        if left[left_idx] <= right[right_idx]:
+            merged.append(left[left_idx])
+            left_idx += 1
+        else:
+            merged.append(right[right_idx])
+            right_idx += 1
+    merged.extend(left[left_idx:])
+    merged.extend(right[right_idx:])
+
+    return merged
+
+
+#Exception Handling
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero.")
+
+try:
+    number = int("abc")
+except ValueError:
+    print("Error: Invalid literal for int().")
+except TypeError:
+    print("Error: Type mismatch.")
+
+try:
+    result = 10 / 2
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero.")
+else:
+    print(f"Result is {result}")
+finally:
+    print("Execution completed.")
+
+#Custom exceptions
+class CustomError(Exception):
+    pass
+
+try:
+    raise CustomError("This is a custom error.")
+except CustomError as e:
+    print(f"Caught an exception: {e}")
+
+#File not found error
+try:
+    with open("nonexistent_file.txt", "r") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("Error: File not found.")
+
+
+
+
