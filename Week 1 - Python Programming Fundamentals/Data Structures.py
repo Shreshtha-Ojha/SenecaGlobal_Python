@@ -103,6 +103,28 @@ k=int(input("Enter a number: "))                 # Input: k=2
 result = tdk(t,k)
 print(result)                                     #Output: [(10, 30)]
 
+# Dictionaries
+person = {"name": "Shreshtha", "age": 10}
+print(person)                                  #Output: {"name": "Shreshtha", "age": 10}
+person['City'] = "Hyderabad"
+print(person)                                  #Output: {"name": "Shreshtha", "age": 10, "City": "Hyderabad"}
+for key, value in person.items():
+    print(f"{key}: {value}")
+print(person.keys())                           # Output: dict_keys(['name', 'age', 'City'])
+print(person.values())                         # Output: dict_values(['Shreshtha', 10, 'Hyderabad'])
+
+'''Merge Two Dictionaries by Adding Values for Common Keys'''
+from collections import Counter
+
+dict1 = {'a':100 , 'b': 200, 'c':300}
+dict2 = {'d':400, 'e':500 , 'c': 50}
+merged = dict(Counter(dict1)+Counter(dict2))
+print(merged)                                    #Output:{'a': 100, 'b': 200, 'c': 350, 'd': 400, 'e': 500}
+dict1.update(dict2)
+print(dict1)                                     # Output: {'a': 100, 'b': 200, 'c': 50, 'd': 400, 'e': 500}
+
+
+
 #String Manipulation
 '''Concatenating two strings'''
 a = "Hi"
