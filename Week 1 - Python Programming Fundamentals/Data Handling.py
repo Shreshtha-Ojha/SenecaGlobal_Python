@@ -54,16 +54,6 @@ data_back = json.loads(json_str)
 print(json_str)
 print(data_back)
 
-import yaml
-data = {'name': 'Ojha', 'age': 2, 'languages': ['English', 'Hindi']}
-# Serialize
-yaml_str = yaml.dump(data)
-# Deserialize 
-data_back = yaml.safe_load(yaml_str)
-print(yaml_str)
-print(data_back)
-
-
 #MultiThreading
 #Before using threading
 import threading
